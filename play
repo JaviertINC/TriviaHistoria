@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trivia</title>
+	<link href="style/style.css" rel="stylesheet" type="text/css" />
+	<script src="js/exit.js"></script>
+	<link href="img/favicon.png" rel="icon" type="image/png">
+	<script></script>
+</head>
+<body id="body">
+	<table width="100%" id="header" class="fologuer">
+		<tr>
+			<td><img style="padding-left:10px;" src="img/escudo.png" width="100px"></td>
+			<td><img src="img/logo.png" width="100px"></td>
+			<td><a href="registro.html"><center><img src="img/Trivia.png"></center></a></td>
+			<td><img style="float: right; padding-right:10px;" src="player/user1.png" width="100px"></td>
+			<td><h2>Jugador: <span id="player">%PLAYER%</span><br />Curso: <span id="curso">%CURSO%</span><br /><a href="registro.html">Cambiar Jugador</a><h2></td>
+		</tr>
+	</table>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+<div id="marginrl">
+<div id="sidebarcube">
+	<div id="padingrl">
+	<h2>¿En que año fue la primera junta de gobierno?</h2>
+	<div class="txt">
+		<form>
+		<h2><label><input type="radio" class="option-input radio" name="example" /> 1710</label><br />
+		<label><input type="radio" class="option-input radio" name="example" disabled /> 1810</label><br />
+		<label><input type="radio" class="option-input radio" name="example" /> 1910</label><br />
+		<label><input type="radio" class="option-input radio" name="example" /> 2010</label></h2><br />
+		<hr />
+		<label style="padding-left:20px;"><input type="button"  class="button" id="confirm" value="Responder">
+		</form>
+	</div>
+	<br />
+	</div>
+</div>
+<br />
+<div id="sidebarcube">
+	<div id="padingrl">
+	<h2>Pregunta Numero 2</h2>
+	<div class="txt">
+		<form>
+		<label><input type="radio" id="respuesta1"> <h2>Respuesta 1</h2></label><br />
+		<label><input type="radio" id="respuesta2"> Respuesta 2</label><br />
+		<label><input type="radio" id="respuesta3"> Respuesta 3</label><br />
+		<label><input type="radio" id="respuesta4"> Respuesta 4</label><br />
+		<hr />
+		<label style="padding-left:20px;"><input type="button"  class="button" id="confirm" value="Responder">
+		</form>
+	</div>
+	<br />
+	</div>
+</div>
+<br />
+<div id="sidebarcube">
+	<div id="padingrl">
+	<h2>Pregunta Numero 3</h2>
+	<div class="txt">
+		<form>
+		<label><input type="radio" id="respuesta1"> Respuesta 1</label><br />
+		<label><input type="radio" id="respuesta2"> Respuesta 2</label><br />
+		<label><input type="radio" id="respuesta3"> Respuesta 3</label><br />
+		<label><input type="radio" id="respuesta4"> Respuesta 4</label><br />
+		<hr />
+		<label style="padding-left:20px;"><input type="button"  class="button" id="confirm" value="Responder">
+		</form>
+	</div>
+	<br />
+	</div>
+</div>
+</div>
+	<br />
+</body>
+</html>
