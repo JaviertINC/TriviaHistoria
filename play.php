@@ -5,7 +5,7 @@
 	<link href="style/style.css" rel="stylesheet" type="text/css" />
 	<script src="js/exit.js"></script>
 	<link href="img/favicon.png" rel="icon" type="image/png">
-	<script></script>
+	<?php include 'core.php'; ?>
 </head>
 <body id="body">
 	<table width="100%" id="header" class="fologuer">
@@ -14,7 +14,7 @@
 			<td><img src="img/logo.png" width="100px"></td>
 			<td><a href="registro.html"><center><img src="img/Trivia.png"></center></a></td>
 			<td><img style="float: right; padding-right:10px;" src="player/user1.png" width="100px"></td>
-			<td><h2>Jugador: <span id="player">%PLAYER%</span><br />Curso: <span id="curso">%CURSO%</span><br /><a href="registro.html">Cambiar Jugador</a><h2></td>
+			<td><h2>Jugador: <?php echo htmlspecialchars($_POST['nombre']); ?><br />Curso: <?php echo (int)$_POST['curso']; ?><br /><a href="registro.html">Cambiar Jugador</a><h2></td>
 		</tr>
 	</table>
 	<br />
