@@ -6,7 +6,18 @@
 	<script src="js/exit.js"></script>
 	<script type="text/javascript" src="js/webcam.min.js"></script>
 	<link href="img/favicon.png" rel="icon" type="image/png">
-	<script></script>
+	<script>
+		window.onload = function() { 
+    var namer = document.getElementById("myid"),
+		curosr = document.getElementById("mycur");
+		
+
+    namer.onkeyup = function(event) {
+	document.getElementById("player").innerHTML = document.getElementById('myid').value;
+	document.getElementById("cursor").innerHTML = document.getElementById('mycur').value;
+}
+}
+	</script>
 </head>
 <body id="body">
 	<table width="100%" id="header" class="fologuer">
