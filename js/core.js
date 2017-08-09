@@ -12,4 +12,4 @@ while (i--) {
  
     eval('var '+t[0]+'="'+t[1]+'";');
 }
-alert(_GET['nombre'] + " " + nombre);
+document.getElementById("player").innerHTML = (_GET['nombre'] + " " + nombre);
