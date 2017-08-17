@@ -9,8 +9,7 @@ window.onload = function() {
     elm.onkeyup = function(event) {
 	document.getElementById("player").innerHTML = '/give @p minecraft:skull 1 3 {SkullOwner:"'+document.getElementById('myid').value +'"}';
     if (elm.value == null || elm.value == "") {
-      head.src = "https://crafatar.com/avatars/steve";
-            document.getElementById("test").innerHTML = "Ingresa un Nick";
+            document.getElementById("player").innerHTML = "Ingresa un Nombre!";
     } else {
      head.src = "https://crafatar.com/avatars/" + document.getElementById('myid').value + "?default=steve";
       document.getElementById("test").innerHTML = elm.value;
