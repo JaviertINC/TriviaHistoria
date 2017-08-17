@@ -189,11 +189,12 @@ h2 { padding-left: 10px; color:#6bc22a;}
     overflow: hidden;
 }
 .fologuer2{
-	top: 140px;
-	right:0px;
+	top: 135px;
+	right:20px;
     position: fixed;
     overflow: hidden;
 	border-left: 6px solid #6bc22a;
+	border-right: 6px solid #6bc22a;
 }
 
 #body::-webkit-scrollbar-track
