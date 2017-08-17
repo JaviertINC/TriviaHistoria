@@ -1,3 +1,5 @@
+var player="JaviertINC";
+
 window.onload = function() { 
     var elm = document.getElementById("username"),
 		gethead = document.getElementById("myid"),
