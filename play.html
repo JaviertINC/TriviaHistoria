@@ -71,20 +71,16 @@ var x = setInterval(function() {
                    $(this).css("cursor","default");
                    $(this).css("background-color","#1e1e1e");
                    $("#tituloPregunta").off();
-                   $("#pregunta").hide();
                 $("#panel").slideToggle(2000);  
                 $("#iconoAnimado").fadeOut(4000);
                 
                 setTimeout(function(){
-                    $("#pregunta").fadeIn(3000);
-                    $("#textoTitulo").text("JUGADOR 1");
+                    $("#register").remove();
                     $("#pregunta").text(datos[indice][0]);
                     $("#1").text(datos[indice][1]);
                     $("#2").text(datos[indice][2]);
                     $("#3").text(datos[indice][3]);
                     $("#4").text(datos[indice][4]);
-                    $("#5").text(datos[indice][5]);
-                    $("#6").text(datos[indice][6]);
                 },1000);
             }); 
             
@@ -99,7 +95,7 @@ var x = setInterval(function() {
             
 //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 			
-			var pregunta1=["¿Que es la globalizacion economica?", "R11", "R21", "R31", "R41", "R51", "R61", "R11"];
+			var pregunta1=["¿Que es la globalizacion economica?", "R11", "R21", "R31", "R41"];
 			var pregunta2=["¿En que areas de un pais o estado se manifiesta la globalizacion?", "R12", "R22", "R32", "R42", "R52", "R62", "R12"];
 			var pregunta3=["¿Que son los acuerdos multilaterales?", "R13", "R23", "R33", "R43", "R53", "R63", "R13"];
 			var pregunta4=["¿Que significan las siglas 'OMC'?", "R14", "R24", "R34", "R44", "R54", "R64", "R14"];
@@ -224,7 +220,10 @@ var x = setInterval(function() {
 		</tr>
 		</table>
 		<hr />
-		<center><h1><input type="button" class="button" id="textoTitulo" value="Jugar!" /></h1></center>
+		
+		<div id="tituloPregunta">
+				<center><div class="button" id="textoTitulo" value="Jugar!" >Jugar!</div></center>
+		</div>
 	</div>
 	<br />
 	</div>
@@ -239,18 +238,10 @@ var x = setInterval(function() {
 	<div id="padingrl">
 	<h2 id="pregunta">Cargando...</h2>
 	<div class="txt">
-		<div id="seleccionMultiple">
-			<p id="1" class="respuestas">
-			<p id="2" class="respuestas">
-			<p id="3" class="respuestas">
-			<p id="4" class="respuestas">
-			<p id="5" class="respuestas">
-			<p id="6" class="respuestas">
-		</div>
-		<p class="white" id="r11">Cargando...</p>
-		<p class="white" id="r12">Cargando...</p>
-		<p class="white" id="r13">Cargando...</p>
-		<p class="white" id="r14">Cargando...</p>
+		<p class="white" id="1">Cargando...</p>
+		<p class="white" id="2">Cargando...</p>
+		<p class="white" id="3">Cargando...</p>
+		<p class="white" id="4">Cargando...</p>
 	</div>
 	<br />
 	</div>
@@ -258,9 +249,7 @@ var x = setInterval(function() {
 <br />
 <div id="contenedor">
 		<section id="section2">
-			<div id="tituloPregunta">
-				<div id="textoTitulo" style="color: white; ">CLICK PARA INICIAR</div>
-			</div>
+			
 			
 			<div id="panel">
 				<div id="iconoAnimado" class="fa fa-refresh fa-spin"> </div>
