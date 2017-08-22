@@ -6,23 +6,17 @@
 	<script src="js/exit.js"></script>
 	<script src="js/core.js"></script>
 	<script src="js/jquery-3.2.1.js"></script>
-	<script type="text/javascript" src="js/webcam.min.js"></script>
+	<script src="js/webcam.min.js"></script>
 	<script>
 		$(document).ready(function(){
     $("#myid").keyup(function(){
-        // Getting the current value of textarea
         var currentText = $(this).val();
-        
-        // Setting the Div content
         $("#player").text(currentText);
     });
 });
     $(document).ready(function(){
     $("#mycur").keyup(function(){
-        // Getting the current value of textarea
         var currentText = $(this).val();
-        
-        // Setting the Div content
         $("#cursor").text(currentText);
     });
 });
@@ -148,7 +142,7 @@ var x = setInterval(function() {
 <body id="body">
 	<table id="header" class="fologuer2">
 		<tr>
-			<td><h2>Tiempo</h2><p id="timerq" class="white">01:59</p></td>
+			<td><h2>Tiempo</h2><p id="timerq" class="white">00D 00H 00M 00S</p></td>
 		</tr>
 	</table>
 	<table width="100%" id="header" class="fologuer">
