@@ -42,27 +42,7 @@ var x = setInterval(function() {
 				$(document).ready(function(){
                 indice = 0;
                 
-                $("#tituloPregunta").on("mouseover",function(){
-                    $(this).css("background-color","white");
-					$(this).css("color","black");
-                    $(this).css("cursor","pointer");
-                });
-                
-                $("#tituloPregunta").on("mouseout",function(){
-                    $(this).css("background-color","#1e1e1e");
-					$(this).css("color","white");
-                });
-                
-                $("p").on("mouseover",function(){
-                    $(this).css("background-color","white");
-                    $(this).css("cursor","pointer");
-					$(this).css("color","black");
-                });
-                
-                $("p").on("mouseout",function(){
-                    $(this).css("background-color","#1e1e1e");
-					$(this).css("color","white");
-                });
+               
  
         //*****************************************************************************
               
@@ -96,25 +76,25 @@ var x = setInterval(function() {
 //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 			
 			var pregunta1=["¿Que es la globalizacion economica?", "R11", "R21", "R31", "R41"];
-			var pregunta2=["¿En que areas de un pais o estado se manifiesta la globalizacion?", "R12", "R22", "R32", "R42", "R52", "R62", "R12"];
-			var pregunta3=["¿Que son los acuerdos multilaterales?", "R13", "R23", "R33", "R43", "R53", "R63", "R13"];
-			var pregunta4=["¿Que significan las siglas 'OMC'?", "R14", "R24", "R34", "R44", "R54", "R64", "R14"];
-			var pregunta5=["Cual es la importancia del cobre para el Chile globalizado?", "R15", "R25", "R35", "R45", "R55", "R65", "R15"];
-			var pregunta6=["Cual es el idioma mayormente utilizado en cuanto a cantidad de paises se trata?", "R16", "R26", "R36", "R46", "R56", "R66", "R16"];
-			var pregunta7=["Cual es la moneda internacional de America?", "R17", "R27", "R37", "R47", "R57", "R67", "R17"];
-			var pregunta8=["Cual es el pais con mayor influencia en el mundo de los paises globalizados?", "R18", "R28", "R38", "R48", "R58", "R68", "R18"];
-			var pregunta9=["Cuales son los seectores mas vulnerables de la sociedad?", "R19", "R29", "R39", "R49", "R59", "R69", "R19"];
-			var pregunta10=["Que es la globalizacion economica?", "R110", "R210", "R310", "R410", "R510", "R610", "R110"];
-			var pregunta11=["Que es una empresa multinacional?", "R111", "R211", "R311", "R411", "R511", "R611", "R111"];
-			var pregunta12=["Cual de las siguientes empresas es una multinacional?", "R112", "R212", "R312", "R412", "R512", "R612", "R112"];
-			var pregunta13=["Que son los acuerdos laterales?", "R113", "R213", "R313", "R413", "R513", "R613", "R113"];
-			var pregunta14=["En Chile, que region es la que genera mas ingresos gracias a las exportaciones?", "R114", "R214", "R314", "R414", "R514", "R614", "R114"];
-			var pregunta15=["Cual es el pais con menor desigualdad economica en America?", "R115", "R215", "R315", "R415", "R515", "R15", "R115"];
-			var pregunta16=["Cual es el pais con mayor desigualdad economica en America?", "R116", "R216", "R316", "R416", "R516", "R616", "R116"];
-			var pregunta17=["Que etnias han sido afectadas por la globalizacion en Chile?", "R117", "R217", "R317", "R417", "R517", "R617", "R117"];
-			var pregunta18=["Cual es la diferencia entre internacionalizacion y globalizacion?", "R118", "R218", "R318", "R418", "R518", "R618", "R118"];
-			var pregunta19=["Cual es el pais no democratico que tiene participacion en la globalizacion?", "R119", "R219", "R319", "R419", "R519", "R619", "R119"];
-			var pregunta20=["Cual de estas organizaciones internacionales ayudan a crear una sociedad mejor y mas justa?", "R120", "R220", "R320", "R420", "R520", "R620", "R120"];
+			var pregunta2=["¿En que areas de un pais o estado se manifiesta la globalizacion?", "R12", "R22", "R32", "R42"];
+			var pregunta3=["¿Que son los acuerdos multilaterales?", "R13", "R23", "R33", "R43"];
+			var pregunta4=["¿Que significan las siglas 'OMC'?", "R14", "R24", "R34", "R44"];
+			var pregunta5=["Cual es la importancia del cobre para el Chile globalizado?", "R15", "R25", "R35", "R45"];
+			var pregunta6=["Cual es el idioma mayormente utilizado en cuanto a cantidad de paises se trata?", "R16", "R26", "R36", "R46"];
+			var pregunta7=["Cual es la moneda internacional de America?", "R17", "R27", "R37", "R47"];
+			var pregunta8=["Cual es el pais con mayor influencia en el mundo de los paises globalizados?", "R18", "R28", "R38", "R48"];
+			var pregunta9=["Cuales son los seectores mas vulnerables de la sociedad?", "R19", "R29", "R39", "R49"];
+			var pregunta10=["Que es la globalizacion economica?", "R110", "R210", "R310", "R410"];
+			var pregunta11=["Que es una empresa multinacional?", "R111", "R211", "R311", "R411"];
+			var pregunta12=["Cual de las siguientes empresas es una multinacional?", "R112", "R212", "R312", "R412"];
+			var pregunta13=["Que son los acuerdos laterales?", "R113", "R213", "R313", "R413"];
+			var pregunta14=["En Chile, que region es la que genera mas ingresos gracias a las exportaciones?", "R114", "R214", "R314", "R414"];
+			var pregunta15=["Cual es el pais con menor desigualdad economica en America?", "R115", "R215", "R315", "R415"];
+			var pregunta16=["Cual es el pais con mayor desigualdad economica en America?", "R116", "R216", "R316", "R416"];
+			var pregunta17=["Que etnias han sido afectadas por la globalizacion en Chile?", "R117", "R217", "R317", "R417"];
+			var pregunta18=["Cual es la diferencia entre internacionalizacion y globalizacion?", "R118", "R218", "R318", "R418"];
+			var pregunta19=["Cual es el pais no democratico que tiene participacion en la globalizacion?", "R119", "R219", "R319", "R419"];
+			var pregunta20=["Cual de estas organizaciones internacionales ayudan a crear una sociedad mejor y mas justa?", "R120", "R220", "R320", "R420"];
 			
 			datos=[pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9, pregunta10, pregunta11, pregunta12, pregunta13, pregunta14, pregunta15, pregunta16, pregunta17, pregunta18, pregunta19, pregunta20];
 			
@@ -128,8 +108,6 @@ var x = setInterval(function() {
 				$("#2").text(datos[indice][2]);
 				$("#3").text(datos[indice][3]);
 				$("#4").text(datos[indice][4]);
-				$("#5").text(datos[indice][5]);
-				$("#6").text(datos[indice][6]);
 		}
 //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA		
 		</script>
