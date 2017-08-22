@@ -41,21 +41,15 @@ var x = setInterval(function() {
 	<script>
 				$(document).ready(function(){
                 indice = 0;
-                
-               
- 
-        //*****************************************************************************
-              
-        
+                        
                $("#tituloPregunta").click(function(){
                    $(this).css("cursor","default");
-                   $(this).css("background-color","#1e1e1e");
                    $("#tituloPregunta").off();
-                $("#panel").slideToggle(2000);  
-                $("#iconoAnimado").fadeOut(4000);
+                $("#panel").slideToggle(1000);
                 
                 setTimeout(function(){
                     $("#register").remove();
+					$("#pregs").fadeIn("slow");
                     $("#pregunta").text(datos[indice][0]);
                     $("#1").text(datos[indice][1]);
                     $("#2").text(datos[indice][2]);
@@ -65,7 +59,7 @@ var x = setInterval(function() {
             }); 
             
             $("p").click(function(){
-               if(datos[indice][parseInt(event.target.id)] === datos[indice][7]) 
+               if(datos[indice][parseInt(event.target.id)] === datos[indice][1]) 
                window.alert("Respuesta Correcta");
                else
                    window.alert("Respuesta Incorrecta");
@@ -210,7 +204,7 @@ var x = setInterval(function() {
 </div>
 
 <hr />
-
+<div id="pregs">
 <div id="marginrl">
 <div id="sidebarcube">
 	<div id="padingrl">
@@ -225,24 +219,7 @@ var x = setInterval(function() {
 	</div>
 </div>
 <br />
-<div id="contenedor">
-		<section id="section2">
-			
-			
-			<div id="panel">
-				<div id="iconoAnimado" class="fa fa-refresh fa-spin"> </div>
-				<div id="pregunta">
-					<div id="contenedor2">
-						<div id="textoPregunta"> </div>
-				</div>
-					
-			 </div>	
-		</section>
-	</div>
-	</div>
-
-
 </div>
-	<br />
+</div>
 </body>
 </html>
