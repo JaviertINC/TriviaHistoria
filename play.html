@@ -22,23 +22,15 @@
     });
 });
 	</script>
-	<script>
-	var countDownDate = new Date("Oct 5, 2017 15:37:25").getTime();
-var x = setInterval(function() {
-    var now = new Date().getTime();
-    var distance = countDownDate - now;
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    document.getElementById("timerq").innerHTML = days + "D " + hours + "H "
-    + minutes + "M " + seconds + "S ";
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("timerq").innerHTML = "Expiro!";
-    }
-}, 1000);
-	</script>
+	<script type="text/javascript">
+    var timeleft = 10;
+    var downloadTimer = setInterval(function(){
+    timeleft--;
+    document.getElementById("timerq").textContent = timeleft;
+    if(timeleft <= 0)
+        clearInterval(downloadTimer);
+    },1000);
+</script>
 	<script>
 				$(document).ready(function(){
                 indice = 0;
@@ -111,7 +103,7 @@ var x = setInterval(function() {
 <body id="body">
 	<table id="header" class="fologuer2">
 		<tr>
-			<td><h2>Tiempo</h2><p id="timerq" class="white">00D 00H 00M 00S</p></td>
+			<td><h2>Tiempo</h2><h1 id="timerq">10 </h1></td>
 		</tr>
 	</table>
 	<table width="100%" id="header" class="fologuer">
