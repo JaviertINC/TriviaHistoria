@@ -51,65 +51,18 @@
 <div id="sidebarcube">
 	<div id="padingrl">
 	<br />
-	<h1 style="text-align:center;">Ingresa tus datos para jugar!</h1>
+	<h1 style="text-align:center;">Bienvenido a Trivia!</h1>
+	<h2 style="text-align:center; color: #c1c1c1;">by JaviertINC</h2>
 	<br />
 	<div class="txt">
-		<form id="formgeter">
-		<table width="100%">
-		<tr>
-		<td width="30%"><h2 class="allright">¿Cual es tu nombre?:</h2> </td><td width="70%" colspan="2"><input type="text" maxlength="50" id="myid" name="username"  placeholder="Tu Nombre" /></td>
-		</tr>
-		<tr>
-		<td><h2 class="allright" >¿En que curso vas?:</h2> </td><td colspan="2"><input type="text" id="mycur" name="usercurso" placeholder="Tu Curso" /></td>
-		</tr>
-		<tr>
-		<td><h2 class="allright" >(Consejo: Elige una buena pose)</h2> </td>
-			<td>
-			<center>
-			<div id="my_camera"><img src="player/user1.png" width="240px" /></div>
-			</center>
-			</td><td><input type="button" class="button" value="Elegir Foto" onClick="take_snapshot()">
-			<script language="JavaScript">
-				
+		<h3>Titulo</h3>
+		<p>Juego desarrollado para cumplir con el trabajo escolar, y obtener una buena nota en historia, y desarrollo web.</p>
 		
-		Webcam.set({
-			// live preview size
-			width: 320,
-			height: 240,
-			
-			// device capture size
-			dest_width: 640,
-			dest_height: 480,
-			
-			// final cropped size
-			crop_width: 480,
-			crop_height: 480,
-			
-			// format and quality
-			image_format: 'jpeg',
-			jpeg_quality: 90
-		});
-		
-		Webcam.attach( '#my_camera' );
-	
-	
-			</script>
-			<script language="JavaScript">
-		function take_snapshot() {
-			// take snapshot and get image data
-			Webcam.snap( function(data_uri) {
-				// display results in page
-				document.getElementById('results').innerHTML = 
-							'<img style="float: right; padding-right:10px;" src="'+data_uri+'" width="100px" />';
-						} );
-					}
-				</script>
-		</td>
-		</tr>
-		</table>
+		<br />
+		<br />
 		<hr />
-		<center><h1><a class="button" href="/trivia/play">Jugar</a></h1></center>
-		</form>
+		<br />
+		<button href="/trivia/play" value="Jugar!">Play!</button>
 	</div>
 	<br />
 	</div>
