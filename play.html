@@ -10,30 +10,33 @@
 	<script src="js/webcam.min.js"></script>
 	<script>
 		$(document).ready(function(){
-    $("#myid").keyup(function(){
-        var currentText = $(this).val();
-        $("#player").text(currentText);
-    });
-});
-    $(document).ready(function(){
-    $("#mycur").keyup(function(){
-        var currentText = $(this).val();
-        $("#cursor").text(currentText);
-    });
-});
+   			$("#myid").keyup(function(){
+        			var currentText = $(this).val();
+        			$("#player").text(currentText);
+    			});
+		});
+    		$(document).ready(function(){
+   			$("#mycur").keyup(function(){
+        			var currentText = $(this).val();
+        			$("#cursor").text(currentText);
+    			});
+		});
 	</script>
 	<script type="text/javascript">
-    var timeleft = 10;
-    var downloadTimer = setInterval(function(){
-    timeleft--;
-    document.getElementById("timerq").textContent = timeleft;
-    if(timeleft <= 0)
-        clearInterval(downloadTimer);
-    },1000);
-</script>
+    		var timeleft = 10;
+    		var downloadTimer = setInterval(function(){
+    			timeleft--;
+  			document.getElementById("timerq").textContent = timeleft;
+    			if(timeleft <= 0)
+       				clearInterval(downloadTimer);
+        			if(timeleft == 0){
+					alert("Se acabo el tiempo!");
+				}
+    			},1000);
+	</script>
 	<script>
-				$(document).ready(function(){
-                indice = 0;
+		$(document).ready(function(){
+                	indice = 0;
                         
                $("#tituloPregunta").click(function(){
                    $(this).css("cursor","default");
