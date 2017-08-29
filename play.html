@@ -101,14 +101,12 @@
                     $("#2").text(datos[indice][2]);
                     $("#3").text(datos[indice][3]);
                     $("#4").text(datos[indice][4]);
-                    $("#5").text(datos[indice][5]);
-                    $("#6").text(datos[indice][6]);
                     contador();
                 },1000);
             }); 
             
             $("p").click(function(){
-               if(datos[indice][parseInt(event.target.id)] === datos[indice][7]) {
+               if(datos[indice][parseInt(event.target.id)] === datos[indice][1]) {
                    score++;
              clearInterval(interval);
             determinaResultado(true);
@@ -344,7 +342,7 @@
 <div id="marginrl">
 <div id="sidebarcube">
 	<div id="padingrl">
-	<h2 id="pregunta">Cargando...</h2>
+	<h2 id="tituloPregunta">Cargando...</h2>
 	<div class="txt">
 		<p class="white" id="1">Cargando...</p>
 		<p class="white" id="2">Cargando...</p>
