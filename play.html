@@ -27,7 +27,7 @@
 		var timeleft = 10;
     		var downloadTimer = setInterval(function(){
     			timeleft--;
-  			document.getElementById("timerq").textContent = timeleft;
+  			document.getElementById("timerq").textContent = timeleft +"<br />";
     			if(timeleft <= 0)
        				clearInterval(downloadTimer);
         			if(timeleft == 0){
@@ -108,7 +108,7 @@
 <body id="body">
 	<table id="header" class="fologuer2">
 		<tr>
-			<td><h2>Tiempo</h2><h1 style="text-align:center;" id="timerq">10</h1></td>
+			<td><h2>Tiempo</h2><h1 style="text-align:center;" id="timerq">10<br /></h1></td>
 		</tr>
 	</table>
 	<table width="100%" id="header" class="fologuer">
