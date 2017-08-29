@@ -179,8 +179,8 @@
                     $("#20").text(datos[indice][20]);
            }
            else{
-        $("#contenedor2").hide();
-        $("#contenedor3").hide();
+        $("#pregs").hide();
+        $("#resps").hide();
         $("#canvas").hide();
         $("#textoTitulo").text("Resultado:\n"+determinaMensaje());
            }
@@ -326,9 +326,8 @@
 		</tr>
 		</table>
 		<hr />
-		
 		<div id="tituloPregunta">
-				<center><div class="button" id="textoTitulo" value="Jugar!" >Jugar!</div></center>
+			<center><div class="button" id="textoTitulo" value="Jugar!" >Jugar!</div></center>
 		</div>
 	</div>
 	<br />
@@ -343,7 +342,7 @@
 <div id="sidebarcube">
 	<div id="padingrl">
 	<h2 id="tituloPregunta">Cargando...</h2>
-	<div class="txt">
+	<div id="resps" class="txt">
 		<p class="white" id="1">Cargando...</p>
 		<p class="white" id="2">Cargando...</p>
 		<p class="white" id="3">Cargando...</p>
