@@ -22,6 +22,26 @@
     			});
 		});
 	</script>
+	<script>
+        canvas = document.getElementById("canvas");
+        ctx = canvas.getContext("2d");
+        function contador(){
+            var pos=0;
+            interval =  setInterval(function(){ 
+				ctx.fillStyle="red";
+                ctx.clearRect(0,0,1000,20);
+                ctx.fillRect(pos,0,1000,20);
+                pos++;
+                if(pos>1000){
+                    clearInterval(interval);
+                    determinaResultado(false);
+                    setTimeout(function(){
+						clickEnParrafo();
+                    },1000);
+                } 
+            },10);
+        }
+    </script>
 	<script type="text/javascript">
     		function timerw(){
 		var timeleft = 10;
@@ -284,47 +304,33 @@
 			</center>
 			</td><td><input type="button" class="button" value="Elegir Foto" onClick="take_snapshot()">
 			<script language="JavaScript">
-				
-		
-		Webcam.set({
-			// live preview size
-			width: 320,
-			height: 240,
-			
-			// device capture size
-			dest_width: 640,
-			dest_height: 480,
-			
-			// final cropped size
-			crop_width: 480,
-			crop_height: 480,
-			
-			// format and quality
-			image_format: 'jpeg',
-			jpeg_quality: 90
-		});
-		
-		Webcam.attach( '#my_camera' );
-	
-	
+				Webcam.set({
+					width: 320,
+					height: 240,
+					dest_width: 640,
+					dest_height: 480,
+					crop_width: 480,
+					crop_height: 480,
+					image_format: 'jpeg',
+					jpeg_quality: 90
+				});
+				Webcam.attach( '#my_camera' );
 			</script>
 			<script language="JavaScript">
-		function take_snapshot() {
-			// take snapshot and get image data
-			Webcam.snap( function(data_uri) {
-				// display results in page
-				document.getElementById('results').innerHTML = 
+				function take_snapshot() {
+					Webcam.snap( function(data_uri) {
+						document.getElementById('results').innerHTML = 
 							'<img style="float: right; padding-right:10px;" src="'+data_uri+'" width="100px" />';
-						} );
-					}
-				</script>
+					} );
+				}
+			</script>
 		</td>
 		</tr>
 		</table>
 		<hr />
 		
 		<div id="tituloPregunta">
-				<center><div class="button" onclick="timerw();" id="textoTitulo" value="Jugar!" >Jugar!</div></center>
+				<center><div class="button" id="textoTitulo" value="Jugar!" >Jugar!</div></center>
 		</div>
 	</div>
 	<br />
@@ -349,6 +355,7 @@
 	</div>
 </div>
 <br />
+<canvas id="canvas" width="1000" height="20" style="margin: 60px;" ></canvas>
 </div>
 </div>
 </body>
