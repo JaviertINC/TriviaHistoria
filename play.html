@@ -23,16 +23,18 @@
 		});
 	</script>
 	<script type="text/javascript">
-    		var timeleft = 10;
+    		function timerw(){
+		var timeleft = 10;
     		var downloadTimer = setInterval(function(){
     			timeleft--;
   			document.getElementById("timerq").textContent = timeleft;
     			if(timeleft <= 0)
        				clearInterval(downloadTimer);
         			if(timeleft == 0){
-					alert("Se acabo el tiempo!");
+					take_snapshot();
 				}
     			},1000);
+		}
 	</script>
 	<script>
 		$(document).ready(function(){
@@ -190,7 +192,7 @@
 		<hr />
 		
 		<div id="tituloPregunta">
-				<center><div class="button" id="textoTitulo" value="Jugar!" >Jugar!</div></center>
+				<center><div class="button" onclick="timerw();" id="textoTitulo" value="Jugar!" >Jugar!</div></center>
 		</div>
 	</div>
 	<br />
