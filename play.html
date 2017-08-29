@@ -37,79 +37,210 @@
 		}
 	</script>
 	<script>
-		$(document).ready(function(){
-                	indice = 0;
-                        
+            $(document).ready(function(){
+                indice = 0;
+                score=0;
+//******************************************************
+                $("#tituloPregunta").on("mouseover",function(){
+                    $(this).css("background-color","salmon");
+                    $(this).css("cursor","pointer");
+                });
+                
+                $("#tituloPregunta").on("mouseout",function(){
+                    $(this).css("background-color","#e5eecc");
+                });
+                
+                $("p").on("mouseover",function(){
+                    $(this).css("background-color","#ECD078");
+                    $(this).css("cursor","pointer");
+                });
+                
+                $("p").on("mouseout",function(){
+                    $(this).css("background-color","salmon");
+                });
+ 
+        //*****************************************************************************
+              
+        
                $("#tituloPregunta").click(function(){
                    $(this).css("cursor","default");
+                   $(this).css("background-color","#e5eecc");
                    $("#tituloPregunta").off();
-                $("#panel").slideToggle(1000);
+                   $("#pregunta").hide();
+                  // $("#contenedor2").hide();
+                $("#panel").slideToggle(1000);  
+                $("#iconoAnimado").fadeOut(2000);
                 
                 setTimeout(function(){
-                    $("#register").remove();
-					$("#pregs").fadeIn("slow");
-                    $("#pregunta").text(datos[indice][0]);
+                   // $("#contenedor2").fadeIn(3000);
+                    $("#pregunta").fadeIn(2000);
+                  //  $("#textoPregunta").text("¿En que año se realizo la Primera Junta de Gobierno?");
+                    $("#textoTitulo").text("JUGADOR 1");
+                    $("#textoPregunta").text(datos[indice][0]);
                     $("#1").text(datos[indice][1]);
                     $("#2").text(datos[indice][2]);
                     $("#3").text(datos[indice][3]);
                     $("#4").text(datos[indice][4]);
+                    $("#5").text(datos[indice][5]);
+                    $("#6").text(datos[indice][6]);
+                    contador();
                 },1000);
             }); 
             
             $("p").click(function(){
-               if(datos[indice][parseInt(event.target.id)] === datos[indice][1]) 
-               	window.alert("Respuesta Correcta");
-		timerw();
-               else
-                   window.alert("Respuesta Incorrecta");
-               clickEnParrafo();
+               if(datos[indice][parseInt(event.target.id)] === datos[indice][7]) {
+                   score++;
+             clearInterval(interval);
+            determinaResultado(true);
+        
+               }
+               else{
+               
+               clearInterval(interval);
+               determinaResultado(false);
+                
+               }
+               setTimeout(function(){
+                   
+                   clickEnParrafo();
+               },1000);
+               
             });
             
             
-//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-			
-			var pregunta1=["¿Que es la globalizacion economica?", "R11", "R21", "R31", "R41"];
-			var pregunta2=["¿En que areas de un pais o estado se manifiesta la globalizacion?", "R12", "R22", "R32", "R42"];
-			var pregunta3=["¿Que son los acuerdos multilaterales?", "R13", "R23", "R33", "R43"];
-			var pregunta4=["¿Que significan las siglas 'OMC'?", "R14", "R24", "R34", "R44"];
-			var pregunta5=["Cual es la importancia del cobre para el Chile globalizado?", "R15", "R25", "R35", "R45"];
-			var pregunta6=["Cual es el idioma mayormente utilizado en cuanto a cantidad de paises se trata?", "R16", "R26", "R36", "R46"];
-			var pregunta7=["Cual es la moneda internacional de America?", "R17", "R27", "R37", "R47"];
-			var pregunta8=["Cual es el pais con mayor influencia en el mundo de los paises globalizados?", "R18", "R28", "R38", "R48"];
-			var pregunta9=["Cuales son los seectores mas vulnerables de la sociedad?", "R19", "R29", "R39", "R49"];
-			var pregunta10=["Que es la globalizacion economica?", "R110", "R210", "R310", "R410"];
-			var pregunta11=["Que es una empresa multinacional?", "R111", "R211", "R311", "R411"];
-			var pregunta12=["Cual de las siguientes empresas es una multinacional?", "R112", "R212", "R312", "R412"];
-			var pregunta13=["Que son los acuerdos laterales?", "R113", "R213", "R313", "R413"];
-			var pregunta14=["En Chile, que region es la que genera mas ingresos gracias a las exportaciones?", "R114", "R214", "R314", "R414"];
-			var pregunta15=["Cual es el pais con menor desigualdad economica en America?", "R115", "R215", "R315", "R415"];
-			var pregunta16=["Cual es el pais con mayor desigualdad economica en America?", "R116", "R216", "R316", "R416"];
-			var pregunta17=["Que etnias han sido afectadas por la globalizacion en Chile?", "R117", "R217", "R317", "R417"];
-			var pregunta18=["Cual es la diferencia entre internacionalizacion y globalizacion?", "R118", "R218", "R318", "R418"];
-			var pregunta19=["Cual es el pais no democratico que tiene participacion en la globalizacion?", "R119", "R219", "R319", "R419"];
-			var pregunta20=["Cual de estas organizaciones internacionales ayudan a crear una sociedad mejor y mas justa?", "R120", "R220", "R320", "R420"];
-			
-			datos=[pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9, pregunta10, pregunta11, pregunta12, pregunta13, pregunta14, pregunta15, pregunta16, pregunta17, pregunta18, pregunta19, pregunta20];
-			
-//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-				});
-//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-		function clickEnParrafo(){
-				indice++;
-				$("#pregunta").text(datos[indice][0]);
-				$("#1").text(datos[indice][1]);
-				$("#2").text(datos[indice][2]);
-				$("#3").text(datos[indice][3]);
-				$("#4").text(datos[indice][4]);
-		}
-//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA		
-		</script>
+//******************************************************************************** 
+           var pregunta1 = ["Hola xdddd?","chao","chao ekisde","jajasaludos","lkjadsjdas","nanixdd","wena kl","wena kl"];
+           var pregunta2 = ["Esta es la pregunta numero 2","Respuesta 2.1","Respuesta 2.2","Respuesta 2.3","Respuesta 2.4","Respuesta 2.5","Respuesta 2.6","Respuesta 2.1"];
+           var pregunta3 = ["Esta es la pregunta numero 3","Respuesta 3.1","Respuesta 3.2","Respuesta 3.3","Respuesta 3.4","Respuesta 3.5","Respuesta 3.6","Respuesta 3.1"];
+           var pregunta4 = ["Esta es la pregunta numero 4","Respuesta 4.1","Respuesta 4.2","Respuesta 4.3","Respuesta 4.4","Respuesta 4.5","Respuesta 4.6","Respuesta 4.1"];
+           var pregunta5 = ["Esta es la pregunta numero 5","Respuesta 5.1","Respuesta 5.2","Respuesta 5.3","Respuesta 5.4","Respuesta 5.5","Respuesta 5.6","Respuesta 5.1"];
+           var pregunta6 = ["Esta es la pregunta numero 6","Respuesta 6.1","Respuesta 6.2","Respuesta 6.3","Respuesta 6.4","Respuesta 6.5","Respuesta 6.6","Respuesta 6.1"];
+           var pregunta7 = ["Esta es la pregunta numero 7","Respuesta 7.1","Respuesta 7.2","Respuesta 7.3","Respuesta 7.4","Respuesta 7.5","Respuesta 7.6","Respuesta 7.1"];
+           var pregunta8 = ["Esta es la pregunta numero 8","Respuesta 8.1","Respuesta 8.2","Respuesta 8.3","Respuesta 8.4","Respuesta 8.5","Respuesta 8.6","Respuesta 8.1"];
+           var pregunta9 = ["Esta es la pregunta numero 9","Respuesta 9.1","Respuesta 9.2","Respuesta 9.3","Respuesta 9.4","Respuesta 9.5","Respuesta 9.6","Respuesta 9.1"];
+           var pregunta10 = ["Esta es la pregunta numero 10","Respuesta 10.1","Respuesta 10.2","Respuesta 10.3","Respuesta 10.4","Respuesta 10.5","Respuesta 10.6","Respuesta 10.1"];
+           var pregunta11 = ["Esta es la pregunta numero 11","Respuesta 11.1","Respuesta 11.2","Respuesta 11.3","Respuesta 11.4","Respuesta 11.5","Respuesta 11.6","Respuesta 11.1"];
+           var pregunta12 = ["Esta es la pregunta numero 12","Respuesta 12.1","Respuesta 12.2","Respuesta 12.3","Respuesta 12.4","Respuesta 12.5","Respuesta 12.6","Respuesta 12.1"];
+           var pregunta13 = ["Esta es la pregunta numero 13","Respuesta 13.1","Respuesta 13.2","Respuesta 13.3","Respuesta 13.4","Respuesta 13.5","Respuesta 13.6","Respuesta 13.1"];
+           var pregunta14 = ["Esta es la pregunta numero 14","Respuesta 14.1","Respuesta 14.2","Respuesta 14.3","Respuesta 14.4","Respuesta 14.5","Respuesta 14.6","Respuesta 14.1"];
+           var pregunta15 = ["Esta es la pregunta numero 15","Respuesta 15.1","Respuesta 15.2","Respuesta 15.3","Respuesta 15.4","Respuesta 15.5","Respuesta 15.6","Respuesta 15.1"];
+           var pregunta16 = ["Esta es la pregunta numero 16","Respuesta 16.1","Respuesta 16.2","Respuesta 16.3","Respuesta 16.4","Respuesta 16.5","Respuesta 16.6","Respuesta 16.1"];
+           var pregunta17 = ["Esta es la pregunta numero 17","Respuesta 17.1","Respuesta 17.2","Respuesta 17.3","Respuesta 17.4","Respuesta 17.5","Respuesta 17.6","Respuesta 17.1"];
+           var pregunta18 = ["Esta es la pregunta numero 18","Respuesta 18.1","Respuesta 18.2","Respuesta 18.3","Respuesta 18.4","Respuesta 18.5","Respuesta 18.6","Respuesta 18.1"];
+           var pregunta19 = ["Esta es la pregunta numero 19","Respuesta 19.1","Respuesta 19.2","Respuesta 19.3","Respuesta 19.4","Respuesta 19.5","Respuesta 19.6","Respuesta 19.1"];
+           var pregunta20 = ["Esta es la pregunta numero 20","Respuesta 20.1","Respuesta 20.2","Respuesta 20.3","Respuesta 20.4","Respuesta 20.5","Respuesta 20.6","Respuesta 20.1"];
+           
+        datos = [pregunta1,pregunta2,pregunta3,pregunta4,pregunta5,pregunta6,pregunta7,pregunta8,pregunta9,pregunta10,pregunta11,pregunta12,pregunta13,pregunta14,pregunta15,pregunta16,pregunta17,pregunta18,pregunta19,pregunta20];
+       });     
+//********************************************************************************
+           function clickEnParrafo(){
+               indice++;
+               if (indice < datos.length){
+               clearInterval(interval);
+               contador();
+               $("#textoPregunta").text(datos[indice][0]);
+                    $("#1").text(datos[indice][1]);
+                    $("#2").text(datos[indice][2]);
+                    $("#3").text(datos[indice][3]);
+                    $("#4").text(datos[indice][4]);
+                    $("#5").text(datos[indice][5]);
+                    $("#6").text(datos[indice][6]);
+                    $("#7").text(datos[indice][7]);
+                    $("#8").text(datos[indice][8]);
+                    $("#9").text(datos[indice][9]);
+                    $("#10").text(datos[indice][10]);
+                    $("#11").text(datos[indice][11]);
+                    $("#12").text(datos[indice][12]);
+                    $("#13").text(datos[indice][13]);
+                    $("#14").text(datos[indice][14]);
+                    $("#15").text(datos[indice][15]);
+                    $("#16").text(datos[indice][16]);
+                    $("#17").text(datos[indice][17]);
+                    $("#18").text(datos[indice][18]);
+                    $("#19").text(datos[indice][19]);
+                    $("#20").text(datos[indice][20]);
+           }
+           else{
+        $("#contenedor2").hide();
+        $("#contenedor3").hide();
+        $("#canvas").hide();
+        $("#textoTitulo").text("Resultado:\n"+determinaMensaje());
+           }
+       }
+        function determinaResultado(par){
+            
+            var canvas2 = document.getElementById("canvas2");
+            var ctx2 = canvas2.getContext("2d");
+            
+            if(par===true){
+            ctx2.beginPath();
+            ctx2.font="30px Comic Sans MS";
+            ctx2.fillStyle = "green";
+            ctx2.fillText("WOW!",150,50);
+            
+            ctx2.arc(150,110,10,0,2*Math.PI);
+            ctx2.moveTo(260,100);
+            ctx2.arc(250,110,10,0,2*Math.PI);
+            
+             ctx2.moveTo(260,130);
+             ctx2.arc(200,130,60,0,Math.PI);
+             ctx2.fill();
+             
+              setTimeout(function(){
+                
+                canvas2.width=400;
+                canvas2.height=200;
+                
+            },1000);
+             
+            }
+            else{
+             ctx2.beginPath();
+            ctx2.font="30px Fixedsys";
+            ctx2.fillStyle = "black";
+            ctx2.fillText("PENCA!",150,50);
+            
+             ctx2.arc(150,110,10,0,2*Math.PI);
+            ctx2.moveTo(260,110);
+            ctx2.arc(250,110,10,0,2*Math.PI);
+            
+             ctx2.moveTo(260,180);
+             ctx2.arc(200,180,60,0,Math.PI,true);
+             ctx2.fill();
+            
+            setTimeout(function(){
+                
+                canvas2.width=400;
+                canvas2.height=200;
+                
+            },1000);
+              
+            }
+            
+        }
+        
+        function determinaMensaje(){
+            if(score===0)
+                return"Obtuviste " + score + " De " +datos.length+ " Puntos posibles.\n Eres asqueroso wn xd";
+            if(score < datos.length/2)
+                return"Obtuviste " + score + " De " +datos.length+ " Puntos posibles. \n Estas en media tabla hacia abajo\n aun eres asqueroso xd";
+            if(score === datos.length/2)
+                return"Obtuviste " + score + " De " +datos.length+ " Puntos posibles. \n Estas en media tabla \n Mejora wn";
+            if(score < datos.length)
+                return"Obtuviste " + score + "De " +datos.length+ " Puntos posibles. \n Estas en media tabla hacia arriba\n el kl weno xd";
+            if(score === datos.length)
+                return"Obtuviste " + score + " De " +datos.length+ " Puntos posibles. \n PUNTAJE PERFECTO! \n ERES UN PIPES!";
+        }
+        
+//********************************************************************************
+           
+        </script>
 	<link href="img/favicon.png" rel="icon" type="image/png">
 </head>
 <body id="body">
 	<table id="header" class="fologuer2">
 		<tr>
-			<td><h2>Tiempo</h2><h1 style="text-align:center;" id="timerq">10<br /></h1></td>
+			<td><h2>Tiempo</h2><h1 style="text-align:center;" id="timerq">10</h1></td>
 		</tr>
 	</table>
 	<table width="100%" id="header" class="fologuer">
