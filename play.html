@@ -31,7 +31,7 @@
     			if(timeleft <= 0)
        				clearInterval(downloadTimer);
         			if(timeleft == 0){
-					take_snapshot();
+					//NextQuest
 				}
     			},1000);
 		}
@@ -58,7 +58,8 @@
             
             $("p").click(function(){
                if(datos[indice][parseInt(event.target.id)] === datos[indice][1]) 
-               window.alert("Respuesta Correcta");
+               	window.alert("Respuesta Correcta");
+		timerw();
                else
                    window.alert("Respuesta Incorrecta");
                clickEnParrafo();
