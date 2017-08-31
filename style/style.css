@@ -1,5 +1,6 @@
 body { margin:0; padding:0; font-size:0.8em; line-height:20px; font-family: "Trebuchet MS", Arial;  background:#1e1e1e; }
 iframe {background: #fff;}
+p{ text-align: center;}
 a { color:#6bc22a; text-decoration:none;}
 a:hover { text-decoration:underline;}
 .white{
@@ -110,6 +111,10 @@ input[type=text], select {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+	position: absolute;
+	left: 48%;
+	top: 337px;
+	text-align:center;
 }
 
 #drop_zone{
@@ -184,9 +189,37 @@ h2 { padding-left: 10px; color:#6bc22a;}
   background-size: 15px 15px;
 }
 
+.playbtn{
+	background-color: #1e1e1e;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.playbtn:hover{
+	background-color: green;
+}
+
+.txtcent{
+	text-align: center;
+}
+
+.shake{
+	width:332px;
+	height:30px;
+	background: red;
+}
+.shake:hover{
+	-webkit-animation: tiembla 0.1s infinite;
+}
+@-webkit-keyframes tiembla{
+	0%  { -webkit-transform:rotateZ(-5deg); }
+	50% { -webkit-transform:rotateZ( 0deg) scale(.8); }
+	100%{ -webkit-transform:rotateZ( 5deg); }
+}
+
 .fologuer{
     position: fixed;
     overflow: hidden;
+	width: 100%;
 }
 .fologuer2{
 	top: 135px;
