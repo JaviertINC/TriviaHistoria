@@ -116,6 +116,18 @@ input[type=text], select {
 	top: 337px;
 	text-align:center;
 }
+.button2 {
+    background-color: #4CAF50;
+    border: none;
+	border-radius: 4px;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	text-align:center;
+}
 
 #drop_zone{
 	border: 7;
