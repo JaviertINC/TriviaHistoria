@@ -3,7 +3,7 @@
 <head>
 	<title>Trivia</title>
 	<link href="style/style.css" rel="stylesheet" type="text/css" />
-        <link href="style/circle.css" rel="stylesheet" />
+    <link href="style/circle.css" rel="stylesheet" />
 	<script src="js/exit1.js"></script>
 	<script src="js/core.js"></script>
 	<script src="js/jquery-3.2.1.js"></script>
@@ -44,7 +44,7 @@
     </script>
 	<script type="text/javascript">
     		function timerw(){
-		var timeleft = 11;
+			var timeleft = 11;
     		var downloadTimer = setInterval(function(){
     			timeleft--;
   			document.getElementById("timerq").textContent = timeleft;
@@ -60,42 +60,36 @@
             $(document).ready(function(){
                 indice = 0;
                 score=0;
+				$("#game").hide();
 //******************************************************
                 $("#tituloPregunta").on("mouseover",function(){
-                    $(this).css("background-color","salmon");
+                    $(this).css("background-color","#green");
                     $(this).css("cursor","pointer");
                 });
                 
                 $("#tituloPregunta").on("mouseout",function(){
-                    $(this).css("background-color","#e5eecc");
+                    $(this).css("background-color","#green");
                 });
                 
-                $("p").on("mouseover",function(){
-                    $(this).css("background-color","#ECD078");
-                    $(this).css("cursor","pointer");
-                });
-                
-                $("p").on("mouseout",function(){
-                    $(this).css("background-color","salmon");
-                });
  
         //*****************************************************************************
               
         
                $("#tituloPregunta").click(function(){
                    $(this).css("cursor","default");
-                   $(this).css("background-color","#e5eecc");
+                   $(this).css("background-color","#4caf50");
                    $("#tituloPregunta").off();
                    $("#pregunta").hide();
-                  // $("#contenedor2").hide();
+                  
                 $("#panel").slideToggle(1000);  
                 $("#iconoAnimado").fadeOut(2000);
                 
                 setTimeout(function(){
-                   // $("#contenedor2").fadeIn(3000);
                     $("#pregunta").fadeIn(2000);
-                  //  $("#textoPregunta").text("¿En que año se realizo la Primera Junta de Gobierno?");
-                    $("#textoTitulo").text("JUGADOR 1");
+                    $("#textoTitulo").text("Iniciando...");
+					$("#register").hide();
+                    $("#game").fadeIn(2000);
+					timerw();
                     $("#textoPregunta").text(datos[indice][0]);
                     $("#1").text(datos[indice][1]);
                     $("#2").text(datos[indice][2]);
@@ -107,8 +101,9 @@
             
             $("p").click(function(){
                if(datos[indice][parseInt(event.target.id)] === datos[indice][1]) {
-                   score++;
-             clearInterval(interval);
+					score++;
+					clearInterval(interval);
+					timerw();
             determinaResultado(true);
         
                }
@@ -127,7 +122,7 @@
             
             
 //******************************************************************************** 
-           var pregunta1 = ["Hola xdddd?","chao","chao ekisde","jajasaludos","lkjadsjdas","nanixdd","wena kl","wena kl"];
+           var pregunta1 = ["Hola xdddd?","R1","R2","R3","R4","R2"];
            var pregunta2 = ["Esta es la pregunta numero 2","Respuesta 2.1","Respuesta 2.2","Respuesta 2.3","Respuesta 2.4","Respuesta 2.5","Respuesta 2.6","Respuesta 2.1"];
            var pregunta3 = ["Esta es la pregunta numero 3","Respuesta 3.1","Respuesta 3.2","Respuesta 3.3","Respuesta 3.4","Respuesta 3.5","Respuesta 3.6","Respuesta 3.1"];
            var pregunta4 = ["Esta es la pregunta numero 4","Respuesta 4.1","Respuesta 4.2","Respuesta 4.3","Respuesta 4.4","Respuesta 4.5","Respuesta 4.6","Respuesta 4.1"];
@@ -182,7 +177,7 @@
         $("#pregs").hide();
         $("#resps").hide();
         $("#canvas").hide();
-        $("#textoTitulo").text("Resultado:\n"+determinaMensaje());
+        $("#puntaje").text(determinaMensaje());
            }
        }
         function determinaResultado(par){
@@ -215,8 +210,8 @@
             else{
              ctx2.beginPath();
             ctx2.font="30px Fixedsys";
-            ctx2.fillStyle = "black";
-            ctx2.fillText("PENCA!",150,50);
+            ctx2.fillStyle = "red";
+            ctx2.fillText("Malo!",150,50);
             
              ctx2.arc(150,110,10,0,2*Math.PI);
             ctx2.moveTo(260,110);
@@ -239,7 +234,7 @@
         
         function determinaMensaje(){
             if(score===0)
-                return"Obtuviste " + score + " De " +datos.length+ " Puntos posibles.\n Eres asqueroso wn xd";
+                return"Obtuviste " + score + " De " +datos.length+ " Puntos posibles. \n Eres asqueroso wn xd";
             if(score < datos.length/2)
                 return"Obtuviste " + score + " De " +datos.length+ " Puntos posibles. \n Estas en media tabla hacia abajo\n aun eres asqueroso xd";
             if(score === datos.length/2)
@@ -300,7 +295,8 @@
 			<center>
 			<div id="my_camera"><img src="player/user1.png" width="240px" /></div>
 			</center>
-			</td><td><input type="button" class="button" value="Elegir Foto" onClick="take_snapshot()">
+			</td>
+			<td><button class="button" value="Elegir Foto" onClick="take_snapshot()">Elegir Foto</button>
 			<script language="JavaScript">
 				Webcam.set({
 					width: 320,
@@ -327,7 +323,7 @@
 		</table>
 		<hr />
 		<div id="tituloPregunta">
-			<center><div class="button" id="textoTitulo" value="Jugar!" >Jugar!</div></center>
+			<center><h2 id="textoTitulo" class="playbtn" value="Jugar!" >Jugar!</h2></center>
 		</div>
 	</div>
 	<br />
@@ -335,25 +331,67 @@
 </div>
 </div>
 </div>
-
-<hr />
+<div id="game">
 <div id="pregs">
 <div id="marginrl">
 <div id="sidebarcube">
+	<div id="tituloPregunta">
+		</div>
 	<div id="padingrl">
-	<h2 id="tituloPregunta">Cargando...</h2>
+	<h2 class="txtcent" id="textoPregunta">Cargando...</h2>
 	<div id="resps" class="txt">
-		<p class="white" id="1">Cargando...</p>
-		<p class="white" id="2">Cargando...</p>
-		<p class="white" id="3">Cargando...</p>
-		<p class="white" id="4">Cargando...</p>
+		<p class="white playbtn" id="1">Cargando...</p>
+		<p class="white playbtn" id="2">Cargando...</p>
+		<p class="white playbtn" id="3">Cargando...</p>
+		<p class="white playbtn" id="4">Cargando...</p>
 	</div>
-	<br />
+<canvas id="canvas" width="1000" height="20" style="margin: 60px;" ></canvas>
 	</div>
 </div>
 <br />
 <canvas id="canvas" width="1000" height="20" style="margin: 60px;" ></canvas>
+<canvas id="canvas2" width="400" height="200"></canvas>
 </div>
 </div>
+</div>
+<div id="final">
+	<div id="marginrl">
+		<div id="sidebarcube">
+			<br />
+			<br />
+			<h1 class="txtcent">Puntos!</h1>
+			<br />
+			<h1 id="puntaje" class="txtcent"></h1>
+			<br />
+			<br />
+			<br />
+		</div>
+	</div>
+</div>
+            <script>
+                canvas = document.getElementById("canvas");
+                ctx = canvas.getContext("2d");
+                function contador(){
+                    var pos=0;
+                  interval =  setInterval(function(){ 
+                    ctx.fillStyle="green";
+                    ctx.clearRect(0,0,1000,20);
+                    ctx.fillRect(pos,0,1000,20);
+                    pos++;
+                    if(pos>1000){
+                        
+                        clearInterval(interval);
+                        determinaResultado(false);
+                        setTimeout(function(){
+                        
+        clickEnParrafo();
+                        },1000);
+                        
+                    }
+                        
+                },10);
+                   
+                }
+                </script>
 </body>
 </html>
