@@ -96,12 +96,14 @@
                     $("#2").text(datos[indice][2]);
                     $("#3").text(datos[indice][3]);
                     $("#4").text(datos[indice][4]);
+                    $("#5").text(datos[indice][5]);
+                    $("#6").text(datos[indice][6]);
                     contador();
                 },1000);
             }); 
             
             $("p").click(function(){
-               if(datos[indice][parseInt(event.target.id)] === datos[indice][1]) {
+               if(datos[indice][parseInt(event.target.id)] === datos[indice][7]) {
 					score++;
 					clearInterval(interval);
 					timerw();
